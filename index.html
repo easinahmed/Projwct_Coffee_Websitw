@@ -15,30 +15,52 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css"
         integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <!-- Custom Style -->
-    <link rel="stylesheet" href="./CSS/style.css">
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'coffee-dark': '#492D26',
+                        'coffee-darker': '#2B1712',
+                        'coffee-light': '#65463E',
+                        'coffee-gold': '#DDB66F',
+                        'coffee-title': '#2E2624',
+                        'coffee-text': '#5B4C48',
+                        'coffee-text-light': '#847571',
+                        'coffee-body': '#FFEFEB',
+                    },
+                    fontFamily: {
+                        'pacifico': ['"Pacifico"', 'cursive'],
+                        'poppins': ['"Poppins"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
 </head>
 
-<body>
+<body class="bg-coffee-body">
 
-    <div class="gradient_color">
+    <div class="bg-gradient-to-b from-[#4B2C24] to-coffee-darker">
 
         <!-- Navbar starts -->
 
-        <nav>
-            <div class="container">
-                <div class="main_menu">
-                    <div class="logo">
+        <nav class="py-6 border-b border-dashed border-coffee-text-light relative">
+            <div class="max-w-[1120px] mx-auto">
+                <div class="flex items-center justify-between">
+                    <div class="w-[107px]">
                         <img src="./Images/logo.svg" alt="logo">
                     </div>
 
                     
-                    <div class="menu">
-                        <ul>
-                            <li><a href="#banner">Home</a></li>
-                            <li><a href="#cofee_history">About</a></li>
-                            <li><a href="#Steps">Steps</a></li>
-                            <li><a href="#cofee_testomonial">Testimonial</a></li>
+                    <div>
+                        <ul class="flex gap-[72px]">
+                            <li><a href="#banner" class="text-white text-base font-pacifico">Home</a></li>
+                            <li><a href="#cofee_history" class="text-white text-base font-pacifico">About</a></li>
+                            <li><a href="#Steps" class="text-white text-base font-pacifico">Steps</a></li>
+                            <li><a href="#cofee_testomonial" class="text-coffee-gold text-base font-pacifico">Testimonial</a></li>
                         </ul>
                     </div>
                 </div>
@@ -48,20 +70,24 @@
         <!-- Navbar Ends -->
 
         <!-- Banner style starts -->
-        <section id="banner">
-            <div class="container">
-                <div class="banner_container">
-                    <div class="hero_img">
-                        <img src="./Images/hero_image.png" alt="hero_image">
+        <section id="banner" class="py-16 pb-44">
+            <div class="max-w-[1120px] mx-auto">
+                <div class="flex items-center gap-[72px]">
+                    <div class="w-[550px]">
+                        <img src="./Images/hero_image.png" alt="hero_image" class="w-full">
                     </div>
-                    <div class="hero_text">
-                        <h4>EXCEPTIONAL QUALITY</h4>
-                        <h1> It's time for a good coffee </h1>
-                        <p>Each select coffee bean reflects our commitment to Peruvian coffee growers,
+                    <div class="max-w-[447px] text-white">
+                        <h4 class="text-coffee-gold text-base font-poppins font-normal">EXCEPTIONAL QUALITY</h4>
+                        <h1 class="text-7xl font-pacifico pt-3 pb-5 leading-tight relative">
+                            It's time for a good coffee
+                            <span class="absolute -top-8 left-16 w-32 h-40 bg-cover" style="background-image: url('./Images/home-coffee-title%201.png');"></span>
+                        </h1>
+                        <p class="max-w-[410px] text-base font-poppins pb-12 pr-12">Each select coffee bean reflects our commitment to Peruvian coffee growers,
                             who bring the best select coffee to your table.</p>
-                        <button>Get Started
+                        <button class="px-7 py-4 rounded-full border-none bg-coffee-gold hover:shadow-lg hover:shadow-coffee-gold/25 transition-all cursor-pointer font-poppins">
+                            Get Started
                             <!-- font awesome icon -->
-                            <i class="fa-solid fa-chevron-right"></i>
+                            <i class="fa-solid fa-chevron-right ml-2"></i>
                         </button>
                     </div>
                 </div>
@@ -75,42 +101,42 @@
 
     <!-- produtcs style starts -->
 
-    <section id="coffe_products">
-        <div class="container">
-            <div class="products_container">
+    <section id="coffe_products" class="bg-coffee-dark py-16 pb-44 z-20 rounded-t-[104px] -mt-26">
+        <div class="max-w-[1120px] mx-auto">
+            <div class="flex justify-between">
 
-                <div class="dropdown_menu">
-                    <div class="selectorr">
-                        <select>
+                <div class="max-w-[450px] text-white">
+                    <div class="relative inline-block">
+                        <select class="bg-coffee-darker text-white rounded-full py-4 px-7 border-none appearance-none cursor-pointer hover:shadow-lg transition-shadow pr-10">
                             <option value="Scroll Down"> Scroll Down </option>
                             <option value="Classic Coffe"> Classic Coffe </option>
                             <option value="Black Coffe">Black Coffe</option>
                             <option value="Strong Coffe"> Strong Coffe </option>
                         </select>
                         <!-- font awesome icon -->
-                        <i class="fa-solid fa-chevron-down"></i>
+                        <i class="fa-solid fa-chevron-down absolute right-4 top-1/2 transform -translate-y-1/2 pointer-events-none text-white"></i>
                     </div>
 
-                    <p>We strive to form deep partnerships with farmers from all over
+                    <p class="pt-8 font-poppins">We strive to form deep partnerships with farmers from all over
                         the world to create perspective together and form healthy working relationships built on trust
                         and respect.</p>
 
                 </div>
-                <div class="products_img">
-                    <div class="product-coffee-1">
+                <div class="flex gap-8 justify-center">
+                    <div class="text-center">
                         <img src="./Images/product-coffee-1.png" alt="">
-                        <p>Classic Coffe</p>
-                        <p>$17.90</p>
+                        <p class="text-white font-pacifico">Classic Coffe</p>
+                        <p class="text-white font-poppins">$17.90</p>
                     </div>
-                    <div class="product-coffee-2">
+                    <div class="text-center">
                         <img src="./Images/product-coffee-2.png" alt="">
-                        <p>Black Coffe</p>
-                        <p>$24.90</p>
+                        <p class="text-white font-pacifico">Black Coffe</p>
+                        <p class="text-white font-poppins">$24.90</p>
                     </div>
-                    <div class="product-coffee-3">
+                    <div class="text-center">
                         <img src="./Images/product-coffee-3.png" alt="">
-                        <p>Strong Coffe</p>
-                        <p>$32.90</p>
+                        <p class="text-white font-pacifico">Strong Coffe</p>
+                        <p class="text-white font-poppins">$32.90</p>
 
                     </div>
                 </div>
@@ -125,15 +151,15 @@
 
     <!-- about style starts -->
 
-    <section id="cofee_history">
-        <div class="container">
-            <div class="history_container">
-                <div class="history_image">
-                    <img src="./Images/about-coffee.png" alt="about-coffee">
+    <section id="cofee_history" class="bg-white py-16 pb-44 z-30 rounded-t-[104px] -mt-26">
+        <div class="max-w-[1120px] mx-auto">
+            <div class="flex gap-[107px]">
+                <div>
+                    <img src="./Images/about-coffee.png" alt="about-coffee" class="w-full">
                 </div>
-                <div class="history_text">
-                    <h2>Our History</h2>
-                    <p>We make and grow the best coffee in Peru, accompanying families since 1930,
+                <div class="max-w-[483px]">
+                    <h2 class="font-pacifico text-5xl pt-20 pb-6 leading-tight">Our History</h2>
+                    <p class="font-poppins pb-20 text-coffee-text">We make and grow the best coffee in Peru, accompanying families since 1930,
                         with professional workers who harvest, collect and select the coffee with quality work,
                         thus providing exquisite coffee to enjoy together as a family.
                     </p>
@@ -149,46 +175,46 @@
     <!-- about style ends -->
 
     <!-- step style starts -->
-    <section id="Steps">
-        <div class="container">
-            <div class="steps_container">
+    <section id="Steps" class="relative bg-coffee-dark bg-cover bg-no-repeat py-16 pb-44 z-40 rounded-t-[104px] -mt-26" style="background-image: url('./Images/bg-coffee-beans%201.svg');">
+        <div class="max-w-[1120px] mx-auto relative">
+            <div class="relative">
 
-                <img src="./Images/Steps line dashed 2.svg" alt="" class="dashed_image">
+                <img src="./Images/Steps line dashed 2.svg" alt="" class="absolute w-[650px] h-[650px] opacity-40" style="transform: translate(35%, 30%);">
 
-                <div class="head">
-                    <h3>
+                <div class="text-center mb-12">
+                    <h3 class="text-white text-5xl font-pacifico leading-tight">
                         Steps of manufacturing our products
                     </h3>
                 </div>
-                <div class="all_steps">
-                    <div class="shape_description">
-                        <div class="small_shape">
-                            <span>01</span>
+                <div class="flex justify-between relative z-10">
+                    <div class="flex flex-col gap-8 text-left">
+                        <div class="w-24 h-24 rounded-full bg-coffee-gold border-4 border-coffee-dark flex items-center justify-center relative -translate-x-1/4 translate-y-full">
+                            <span class="text-coffee-dark font-poppins font-medium text-4xl">01</span>
                         </div>
-                        <div class="shape_one">
+                        <div class="bg-coffee-light rounded-full w-64 h-64 flex items-center justify-center">
                             <img src="./Images/steps-green-coffee.svg" alt="">
                         </div>
-                        <p>Harvest occurs annually when the coffee beans reach
+                        <p class="w-72 text-white font-poppins">Harvest occurs annually when the coffee beans reach
                             maturity and are collected for processing.</p>
                     </div>
-                    <div class="shape_description_middle">
-                        <div class="small_shape">
-                            <span>02</span>
+                    <div class="flex flex-col gap-8 text-center pt-56 pb-44">
+                        <div class="w-24 h-24 rounded-full bg-coffee-gold border-4 border-coffee-dark flex items-center justify-center relative -translate-x-1/4 translate-y-full">
+                            <span class="text-coffee-dark font-poppins font-medium text-4xl">02</span>
                         </div>
-                        <p>The beans are dried using a wet or dry technique,
+                        <p class="w-72 text-white font-poppins">The beans are dried using a wet or dry technique,
                             depending on the taste we want to obtain.</p>
-                        <div class="shape_two">
+                        <div class="bg-coffee-light rounded-full w-64 h-64 flex items-center justify-center">
                             <img src="./Images/steps-coffee-beans.svg" alt="">
                         </div>
                     </div>
-                    <div class="shape_description">
-                        <div class="small_shape">
-                            <span>03</span>
+                    <div class="flex flex-col gap-8 text-left">
+                        <div class="w-24 h-24 rounded-full bg-coffee-gold border-4 border-coffee-dark flex items-center justify-center relative -translate-x-1/4 translate-y-full">
+                            <span class="text-coffee-dark font-poppins font-medium text-4xl">03</span>
                         </div>
-                        <div class="shape_three">
+                        <div class="bg-coffee-light rounded-full w-64 h-64 flex items-center justify-center">
                             <img src="./Images/steps-ground-coffee 1.svg" alt="">
                         </div>
-                        <p>
+                        <p class="w-72 text-white font-poppins">
                             The coffee is roasted and
                             acquires its flavor by processing the grain in ovens.
                         </p>
@@ -205,45 +231,43 @@
 
     <!-- Testomonial style starts -->
 
-    <section id="cofee_testomonial">
-        <div class="container">
-            <div class="testomonial_container">
-                <div class="testomonial_text">
-                    <p>Coffee is the best drink in the morning, it keeps you focused.</p>
+    <section id="cofee_testomonial" class="bg-white py-16 pb-44 z-50 rounded-t-[104px] -mt-26 w-full">
+        <div class="max-w-[1120px] mx-auto">
+            <div class="flex items-center justify-between">
+                <div>
+                    <p class="text-coffee-dark font-pacifico text-5xl w-[538px] leading-tight">Coffee is the best drink in the morning, it keeps you focused.</p>
                 </div>
-                <div class="testomonial_image">
+                <div>
                     <img src="./Images/testimonial-coffee.png" alt="cofee_testomonial">
                 </div>
             </div>
 
         </div>
-        </div>
-
-
     </section>
     <!-- Testomonial style ends-->
 
     <!-- footer -->
 
-    <footer style="background: url('./Images/Footer.jpg');">
-        <div class="container">
-            <div class="footer_container">
-                <div class="footer_text">
-                    <div class="footer_logo">
+    <footer class="z-60 bg-cover bg-no-repeat bg-center rounded-t-[104px] -mt-26 pt-24 pb-12" style="background-image: url('./Images/Footer.jpg');">
+        <div class="max-w-[1120px] mx-auto">
+            <div class="flex justify-between items-center mb-12">
+                <div class="text-white">
+                    <div class="w-[107px] mb-6">
                         <img src="./Images/logo.svg" alt="logo">
                     </div>
-                    <h2>Sign Up For Our Newsletter</h2>
+                    <h2 class="font-pacifico text-4xl leading-tight">Sign Up For Our Newsletter</h2>
                 </div>
-                <div class="footer_form">
-                    <form action="">
-                        <input type="text" placeholder="Enter your email">
-                        <button type="submit">Subscribe
-                            <span>
+                <div class="w-[360px]">
+                    <form action="" class="flex flex-col gap-6 items-center">
+                        <input type="text" placeholder="Enter your email" class="h-16 rounded-full py-5 px-6 bg-transparent border-2 border-coffee-text-light w-full text-white placeholder-gray-400">
+                        <button type="submit" class="w-full h-16 bg-coffee-gold rounded-full border-none p-5 font-poppins cursor-pointer">
+                            Subscribe
+                            <span class="ml-2">
                                 <i class="fa-solid fa-chevron-right"></i>
                             </span>
                         </button>
                     </form>
-                    <p>We care about your data. Read our <span>Privacy Policy</span></p>
+                    <p class="pt-6 text-center font-poppins text-sm text-white">We care about your data. Read our <span class="text-coffee-gold cursor-pointer">Privacy Policy</span></p>
                 </div>
 
 
@@ -251,13 +275,13 @@
         </div>
 
 
-        <div class="icons">
-            <ul>
+        <div class="text-center">
+            <ul class="flex gap-12 justify-center pt-24 pb-16">
                 <li><a href="#"><img src="./Images/ri_facebook-fill.svg" alt=""></a></li>
-                <li><a href="#"></a><img src="./Images/ri_instagram-fill.svg" alt=""></li>
+                <li><a href="#"><img src="./Images/ri_instagram-fill.svg" alt=""></a></li>
                 <li><a href="#"><img src="./Images/ri_twitter-fill.svg" alt=""></a></li>
             </ul>
-            <p> &#169; Copyright Bedimcode. All rights reserved</p>
+            <p class="text-coffee-text-light text-xs font-poppins"> &#169; Copyright Bedimcode. All rights reserved</p>
         </div>
     </footer>
 </body>
